@@ -1,0 +1,52 @@
+INSERT INTO Role (name) VALUES ('Commanding Officer');
+INSERT INTO Role (name) VALUES ('Executive Officer');
+INSERT INTO Role (name) VALUES ('Second Officer');
+INSERT INTO Role (name) VALUES ('Chief Helm Officer');
+INSERT INTO Role (name) VALUES ('Helm Officer');
+INSERT INTO Role (name) VALUES ('Chief Operation Officer');
+INSERT INTO Role (name) VALUES ('Operations Officer');
+
+insert into Battle_name (Battle_name) values ('The Battle of Cardassia ');
+insert into Battle_name (Battle_name) values ('The Second Battle of Chin’toka');
+insert into Battle_name (Battle_name) values ('The First Battle of Chin’toka');
+insert into Battle_name (Battle_name) values ('Klingon assault against Dominion');
+insert into Battle_name (Battle_name) values ('The Second Battle of Deep Space 9');
+
+insert into Captain_Log (Description) values ('the combined forces of the Dominion and the Cardassian Union, led by Gul Dukat, launched an assault on the Federation-held starbase Deep Space 9.');
+insert into Captain_Log (Description) values ('The objective of the mission was the recapture of starbase Deep Space Nine');
+insert into Captain_Log (Description) values ('the first offensive launched by the allied forces of the United Federation of Planets,');
+insert into Captain_Log (Description) values ('an attack against the Chin’toka System, a territory of the Cardassian Union held by the forces of the Federation,');
+insert into Captain_Log (Description) values ('he Klingon Empire, and the Romulan Star Empire launched an invasion of the Dominion-held Cardassian Union');
+
+insert into Maintenance (Repair_time, Description) values (11,'Functional');
+insert into Maintenance (Repair_time, Description) values (22,'repaired');
+
+
+insert into Battle (Battle_nameID, Captain_LogID, Attack_Time, Attack_Status) values (1,1,10,' progress');
+insert into Battle (Battle_nameID, Captain_LogID, Attack_Time, Attack_Status) values (2,2,20,'victory');
+insert into Battle (Battle_nameID, Captain_LogID, Attack_Time, Attack_Status) values (3,3,33,'defeat');
+insert into Battle (Battle_nameID, Captain_LogID, Attack_Time, Attack_Status) values (4,4,44,'draw');
+
+insert into Captain (Name, Captain_LogID) values ('Jean-Luc Picard',1);
+insert into Captain (Name, Captain_LogID) values ('Christopher Pike',2);
+insert into Captain (Name, Captain_LogID) values ('Kathryn Janeway',3);
+insert into Captain (Name, Captain_LogID) values ('James T',4);
+
+insert into Coordinates (Lattitude, Longitude) values (50.12347, 10.9877893);
+insert into Coordinates (Lattitude, Longitude) values (40.3321598, 5.987872);
+insert into Coordinates (Lattitude, Longitude) values (35.4579825, 10.9879213);
+
+insert into Starsystem (Name,CoordinatesID) values ('Sol',1);
+insert into Starsystem (Name,CoordinatesID) values ('Vulkan',2);
+insert into Starsystem (Name,CoordinatesID) values ('Rigel',3);
+
+
+insert into Spaceship (Name,MaintenanceID,CoordinatesID) values ('SS Botany Bay',1,1);   
+insert into Spaceship (Name,MaintenanceID,CoordinatesID) values ('Phoenix',1,2);   
+insert into Spaceship (Name,MaintenanceID,CoordinatesID) values ('USS Enterprise',1,3 );     
+
+insert into Crew (Name, RoleID, CoordinatesID) values ('Leonard Bones',1,1); 
+insert into Crew (Name, RoleID, CoordinatesID) values ('Scotty',2,2); 
+insert into Crew (Name, RoleID, CoordinatesID) values ('Spock',3,3); 
+
+

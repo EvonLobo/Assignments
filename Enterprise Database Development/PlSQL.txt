@@ -1,0 +1,90 @@
+CREATE OR REPLACE TRIGGER Role_insert
+	BEFORE INSERT ON Role
+	FOR EACH ROW
+BEGIN
+	SELECT Role_sequence.nextval
+	INTO :NEW.Roleid
+	FROM dual;
+END;
+/
+CREATE OR REPLACE TRIGGER Battle_name
+	BEFORE INSERT ON Battle_name
+	FOR EACH ROW
+BEGIN
+	SELECT Battle_name_sequence.nextval
+	INTO :NEW.Battle_nameid
+	FROM dual;
+END;
+/
+CREATE OR REPLACE TRIGGER Captain_Log
+	BEFORE INSERT ON Captain_Log
+	FOR EACH ROW
+BEGIN
+	SELECT Captain_Log_sequence.nextval
+	INTO :NEW.Captain_Logid
+	FROM dual;
+END;
+/
+CREATE OR REPLACE TRIGGER Battle
+	BEFORE INSERT ON Battle
+	FOR EACH ROW
+BEGIN
+	SELECT Battle_sequence.nextval
+	INTO :NEW.Battle
+	FROM dual;
+END;
+/
+CREATE OR REPLACE TRIGGER Maintenance
+	BEFORE INSERT ON Maintenance
+	FOR EACH ROW
+BEGIN
+	SELECT Maintenance_sequence.nextval
+	INTO :NEW.Maintenance
+	FROM dual;
+END;
+/
+CREATE OR REPLACE TRIGGER Captain
+	BEFORE INSERT ON Captain
+	FOR EACH ROW
+BEGIN
+	SELECT Captain_sequence.nextval
+	INTO :NEW.Captainid
+	FROM dual;
+END;
+/
+CREATE OR REPLACE TRIGGER Coordinates
+	BEFORE INSERT ON Coordinates
+	FOR EACH ROW
+BEGIN
+	SELECT Coordinates_sequence.nextval
+	INTO :NEW.Coordinatesid
+	FROM dual;
+END;
+/
+CREATE OR REPLACE TRIGGER Starsystem
+	BEFORE INSERT ON Starsystem
+	FOR EACH ROW
+BEGIN
+	SELECT Starsystem_sequence.nextval
+	INTO :NEW.Starsystemid
+	FROM dual;
+END;
+/
+CREATE OR REPLACE TRIGGER Spaceship
+	BEFORE INSERT ON Spaceship
+	FOR EACH ROW
+BEGIN
+	SELECT Spaceship_sequence.nextval
+	INTO :NEW.Spaceshipid
+	FROM dual;
+END;
+/
+CREATE OR REPLACE TRIGGER Crew
+	BEFORE INSERT ON Crew
+	FOR EACH ROW
+BEGIN
+	SELECT Crew_sequence.nextval
+	INTO :NEW.Crewid
+	FROM dual;
+END;
+/

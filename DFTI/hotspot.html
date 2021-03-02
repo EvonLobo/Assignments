@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="stylesheet.css">
+	<title>Home Page: Hotspots </title>
+</head>
+<body>
+<h2>Welcome to Hotspots! </h2>
+	<h3>Add a New Point of Interest</h3>
+		<div class= "container1">
+		  <form method="post" action="hotspot.php">
+			<h5><label for="username">Username:</label></h5>
+			<input type="text" id="username" name="username"/>
+			<br/>
+			<h5><label for="name">Name of Place:</label></h5>
+			<input type="text" id="name" name="name"/>
+			<br/>
+			<h5><label for="type">Type of Place:</label></h5>
+			<input type="text" id="type" name="type"/>
+			<br/>
+			<h5><label for="region">Region:</label></h5>
+			<input type="text" id="region" name="region"/>
+			<br/>
+			<h5><label for="description">Description:</label></h5>
+			<input type="text" id="description" name="description"/>
+			<br/>
+			<input type="submit" value="Done" />
+		  </form>
+		</div>
+		<br>
+		<br>
+	<h3>Search For A Point of Interest</h3>
+		<div class="container2">
+		<form method="get" action="searchresults.php">
+			<h5><label for="POI">Search POI:</label></h5>
+			<input name="search" placeholder="Search For a Region" id="search"/>
+			<br/>
+			<br/>
+			<input type="submit" value="Search" />
+		</form>
+
+		</form>
+		</div>
+		
+</body>
+</html>

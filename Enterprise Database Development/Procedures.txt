@@ -1,0 +1,12 @@
+CREATE OR REPLACE PROCEDURE beam_insideship  
+IS  
+BEGIN  
+UPDATE crew SET CoordinatesID='2' WHERE CrewID='2';  
+END;   
+/
+
+CREATE OR REPLACE PROCEDURE beam_outsideship 
+IS  
+BEGIN  
+UPDATE crew SET CoordinatesID='1' WHERE CrewID='2';  
+END; 

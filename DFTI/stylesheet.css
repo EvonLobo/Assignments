@@ -1,0 +1,37 @@
+body {
+  background-color: #ffe5b4;
+}
+h2 {
+  color: black;
+  font-family: "Comic Sans MS", Courier, monospace;
+}
+
+h5, h3 {
+	color: #DF744A;
+	font-family: "Comic Sans MS", Courier, monospace;
+}
+p {
+  color: #DF744A;
+  font-family: "Comic Sans MS", Courier, monospace;
+}
+
+#container1 {
+  width: 500px;
+  clear: both;
+}
+
+#container2  {
+  width: 100%;
+  clear: both;
+  float: right;
+}
+#wrapper {
+    text-align: center;
+    height: 700px;
+    max-width: 1400px;
+}
+
+	
+
+
+

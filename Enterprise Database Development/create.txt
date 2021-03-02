@@ -1,0 +1,88 @@
+CREATE TABLE Role
+(
+    RoleID          NUMBER GENERATED ALWAYS as IDENTITY(START with 1 INCREMENT by 1),
+    Name     VARCHAR (255) NOT NULL,
+ CONSTRAINT Role_PK PRIMARY KEY (RoleID)
+);
+CREATE TABLE Battle_name 
+(
+    Battle_nameID          NUMBER GENERATED ALWAYS as IDENTITY(START with 1 INCREMENT by 1),
+    Battle_name     VARCHAR (255) NOT NULL,
+ CONSTRAINT Battle_name_PK PRIMARY KEY (Battle_nameID)
+);
+CREATE TABLE Captain_Log 
+(
+    Captain_LogID          NUMBER GENERATED ALWAYS as IDENTITY(START with 1 INCREMENT by 1),
+    Description     VARCHAR (255) NOT NULL,
+ CONSTRAINT Captain_Log_PK PRIMARY KEY (Captain_LogID)
+);
+
+CREATE TABLE Battle
+(
+    BattleID          NUMBER GENERATED ALWAYS as IDENTITY(START with 1 INCREMENT by 1),
+    Battle_nameID     NUMBER (10) NOT NULL,
+    Captain_LogID     NUMBER(10) NOT NULL, 
+    Attack_Time       NUMBER(10) NOT NULL,
+    Attack_Status     VARCHAR(200) NOT NULL,
+ CONSTRAINT Battle_PK PRIMARY KEY (BattleID),
+ CONSTRAINT Battle_BattleName_fk FOREIGN KEY (Battle_nameID)
+ REFERENCES Battle_name(Battle_nameID),
+ CONSTRAINT Battle_Captain_Log_fk FOREIGN KEY (Captain_LogID)
+ REFERENCES Captain_Log(Captain_LogID)
+);
+
+CREATE TABLE Maintenance
+(
+    MaintenanceID          NUMBER GENERATED ALWAYS as IDENTITY(START with 1 INCREMENT by 1),
+    Repair_time     NUMBER (10) NOT NULL,
+    Description     VARCHAR(200) NOT NULL,
+    CONSTRAINT Maintenance_PK PRIMARY KEY (MaintenanceID)
+);
+CREATE TABLE Captain
+(
+    CaptainID          NUMBER GENERATED ALWAYS as IDENTITY(START with 1 INCREMENT by 1),
+    Name     VARCHAR (255) NOT NULL,
+    CONSTRAINT Captain_PK PRIMARY KEY (CaptainID),
+    Captain_LogID     NUMBER(10) NOT NULL, 
+    CONSTRAINT Captain_Log_fk FOREIGN KEY (Captain_LogID) REFERENCES Captain_Log(Captain_LogID)
+);
+CREATE TABLE Coordinates
+(
+    CoordinatesID          NUMBER GENERATED ALWAYS as IDENTITY(START with 1 INCREMENT by 1),
+    Lattitude FLOAT,
+    Longitude FLOAT,
+    CONSTRAINT Coordinates_PK PRIMARY KEY (CoordinatesID)
+);
+CREATE TABLE Starsystem
+(
+    StarsystemID          NUMBER GENERATED ALWAYS as IDENTITY(START with 1 INCREMENT by 1),
+    Name     VARCHAR (255) NOT NULL,
+    CONSTRAINT Starsystem_PK PRIMARY KEY (StarsystemID),
+    CoordinatesID     NUMBER(10) NOT NULL, 
+    CONSTRAINT Starsystem_Coordinates_fk FOREIGN KEY (StarSystemID)
+    REFERENCES Coordinates(CoordinatesID)
+);
+CREATE TABLE Spaceship
+(
+    SpaceshipID          NUMBER GENERATED ALWAYS as IDENTITY(START with 1 INCREMENT by 1),
+    Name     VARCHAR (255) NOT NULL,
+    CONSTRAINT Spaceship_PK PRIMARY KEY (SpaceshipID),
+    MaintenanceID     NUMBER(10) NOT NULL,
+    CoordinatesID     NUMBER(10) NOT NULL, 
+    CONSTRAINT Spaceship_Coordinates_fk FOREIGN KEY (CoordinatesID)
+    REFERENCES Coordinates(CoordinatesID),
+    CONSTRAINT Spaceship_Maintenance_fk FOREIGN KEY (MaintenanceID)
+    REFERENCES Maintenance(MaintenanceID)
+);
+CREATE TABLE Crew
+(
+    CrewID          NUMBER GENERATED ALWAYS as IDENTITY(START with 1 INCREMENT by 1),
+    Name     VARCHAR (255) NOT NULL,
+    CONSTRAINT Crew_PK PRIMARY KEY (CrewID),
+    RoleID     NUMBER(10) NOT NULL, 
+    CoordinatesID     NUMBER(10) NOT NULL,
+    CONSTRAINT Crew_Coordinates_fk FOREIGN KEY (CoordinatesID)
+    REFERENCES Coordinates(CoordinatesID),
+    CONSTRAINT Crew_Role_fk FOREIGN KEY (RoleID)
+    REFERENCES Role(RoleID)
+);

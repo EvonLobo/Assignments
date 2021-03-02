@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="css/contact.css">
+<title>Homelessness: Donate</title>
+<script> 
+  function DONATION()                                    
+    { 
+      var name = document.forms["RegForm"]["Name"];               
+      var email = document.forms["RegForm"]["EMail"];    
+      var phone = document.forms["RegForm"]["Telephone"];     
+      var address = document.forms["RegForm"]["Address"];  
+           
+      if (name.value == "")                                  
+        { 
+          window.alert("Please enter your name."); 
+          name.focus(); 
+          return false; 
+        } 
+           
+         if (address.value == "")                               
+        { 
+          window.alert("Please enter your address."); 
+          name.focus(); 
+          return false; 
+        } 
+               
+         if (email.value == "")                                   
+        { 
+          window.alert("Please enter a valid e-mail address."); 
+          email.focus(); 
+          return false; 
+        } 
+           
+         if (email.value.indexOf("@", 0) < 0)                 
+        { 
+          window.alert("Please enter a valid e-mail address."); 
+          email.focus(); 
+          return false; 
+        } 
+           
+         if (email.value.indexOf(".", 0) < 0)                 
+        { 
+          window.alert("Please enter a valid e-mail address."); 
+          email.focus(); 
+          return false; 
+        } 
+           
+          if (phone.value == "")                           
+        { 
+          window.alert("Please enter your telephone number."); 
+          phone.focus(); 
+          return false; 
+        } 
+          return true; 
+        }
+</script> 
+<link href='https://fonts.googleapis.com/css?family=Amatic SC' rel='stylesheet'>
+  <style>
+    h1 {
+        font-family: 'Amatic SC';font-size: 50px;
+      }
+  </style>
+<link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+  <style>
+    p {
+        font-family: 'Sofia';font-size: 16px;
+      }
+  </style>
+</head>
+<body>
+  <div id= "wrapper"> 
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="meetpeople.html">Meet People</a></li>
+        <li><a href="about.html">About</a></li>
+    </ul>
+  <div id= "form">
+    <h1 style="text-align: center"> DONATION FORM </h1>           
+<form name="RegForm" action="/submit.php" onsubmit="return DONATION()" method="post">  
+      
+    <p>Name: <input type="text" size=65 name="Name"> </p><br>        
+    <p> Address: <input type="text" size=65 name="Address">  </p><br> 
+    <p>E-mail Address: <input type="text" size=65 name="EMail">  </p><br> 
+    <p>Telephone: <input type="text" size=65 name="Telephone"> </p><br>   
+    <p>Reason to donate:  <textarea cols="55" name="Comment">  </textarea></p> 
+    <p><input type="submit" value="Send" name="Submit">      
+        <input type="reset" value="Reset" name="Reset">  
+    </p>
+ </form>
+  </div> <!--./#form-->
+<br>
+<br>
+<br>
+  <div style="width:800px; margin:0 auto; background-color: white; opacity: 0.8; padding: 20px;">
+      <h3> What Happens After Filling This Form?</h3> <p>If you choose to donate, please fill in the details required on this form and we will then send you an invitation to donate along with all procedures and any necessary information you need to know. </p> 
+
+       <h3> PRIVACY POLICY </h3> <p>We will only use the details you provide for record-keeping of all our donors and to get back in touch with you. Your data will not be used for any false purpose. Your information is taken only with earnest intent, and your privacy is respected. </p> </div>
+  </div> <!--./#wrapper-->
+</body>
+</html>
+

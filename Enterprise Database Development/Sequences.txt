@@ -1,0 +1,10 @@
+CREATE SEQUENCE Role_sequence;
+CREATE SEQUENCE Battle_name_sequence;
+CREATE SEQUENCE Captain_Log_sequence;
+CREATE SEQUENCE Battle_sequence;
+CREATE SEQUENCE Maintenance_sequence;
+CREATE SEQUENCE Captain_sequence;
+CREATE SEQUENCE Coordinates_sequence;
+CREATE SEQUENCE Starsystem_sequence;
+CREATE SEQUENCE Spaceship_sequence;
+CREATE SEQUENCE Crew_sequence;

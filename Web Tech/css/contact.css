@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+form {
+    width: 30%;
+    margin: 0 auto;
+}
+label {
+    width: 30%;
+    text-align: right;
+}
+label, input {
+    display: inline-block;
+}
+form {
+    background-color: #9370DB;
+    color: white;
+    border-style: groove;
+    border-style: solid;
+    border-width: 5px
+}
+body {
+    background-image: url("../wallpaper.jpg");
+    background-size: cover;
+}
+h3, h4 {
+    text-align: center;
+}
+
+h1 {
+    color: white;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-size: 20px;
+    }
+      
+li {
+    float: left;
+    }
+      
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.6s ease;
+    }
+ul li a:hover {
+    background-color: #4B0082;
+    }
